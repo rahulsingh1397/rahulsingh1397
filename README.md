@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Rahul Singh</h1>
 <h3 align="center">A passionate ML Engineer</h3>
 
-- 🌱 I’m currently learning **Gorq, PhiData, LangFlow**
+- 🌱 I’m currently learning **Gorq, PhiData, LangFlow, Quantizing LLMS, Finetuning LLM using LoRa and QLoRa**
 
 - 👨‍💻 All of my projects are available at [https://github.com/rahulsingh1397](https://github.com/rahulsingh1397)
 
