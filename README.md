@@ -5,7 +5,7 @@
 
 - 👨‍💻 All of my projects are available at [https://github.com/rahulsingh1397](https://github.com/rahulsingh1397)
 
-- 📫 How to reach me **rahul.rs1397@gmail.comn**
+- 📫 How to reach me **rahul.rs1397@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
