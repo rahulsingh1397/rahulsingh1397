@@ -77,7 +77,16 @@
 
 ---
 
+
 ### 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&theme=tokyonight&hide_border=true" alt="Rahul's GitHub Stats" width="48%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rahulsingh1397&theme=tokyonight&hide_border=true" alt="Rahul's Streak" width="48%" />
+</p>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" width="48%" />
+</p>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="Rahul's GitHub Stats" width="48%" />
