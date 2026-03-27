@@ -1,11 +1,18 @@
 <div align="center">
-  
+
 # Rahul Singh  
 ### AI Security & Governance Engineer | LLM Systems | Enterprise AI
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=700&lines=AI+Security+Engineer;LLM+Systems+%26+AI+Agents;Enterprise+AI+Governance;Building+Secure+AI+Pipelines" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00F5D4&center=true&vCenter=true&width=750&lines=AI+Security+Engineer;LLM+Systems+%26+AI+Agents;Enterprise+AI+Governance;Building+Secure+Production+AI" />
 
-![](https://komarev.com/ghpvc/?username=rahulsingh1397&color=blueviolet&style=flat-square&label=PROFILE+VIEWS)
+<br/>
+
+<a href="https://rahulaiportfolio.netlify.app/data-scientist-portfolio.html/">
+  <img src="https://img.shields.io/badge/🌐 Portfolio-View%20Work-00F5D4?style=for-the-badge" />
+</a>
+<a href="mailto:rahul.rs1397@gmail.com">
+  <img src="https://img.shields.io/badge/📩 Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
 
 </div>
 
@@ -13,41 +20,41 @@
 
 ## 🧠 What I Do
 
-I build **secure, production-ready AI systems** focused on **LLMs, enterprise data, and security risk mitigation**.
+I design and build **secure, production-grade AI systems** that enterprises can actually deploy with confidence.
 
-Most AI systems today fail at:
-- security vulnerabilities (prompt injection, data leakage)
-- lack of governance
-- non-production-ready architectures  
+Most AI systems fail due to:
+- security vulnerabilities (prompt injection, data leakage)  
+- lack of governance & auditability  
+- poor production design  
 
-I specialize in solving these gaps by combining:
-- **AI/ML systems engineering**
-- **security frameworks (MITRE, anomaly detection)**
+I focus on solving these through:
+- **LLM systems + AI agents**
+- **security frameworks & threat modeling**
 - **real-world deployment pipelines**
 
 ---
 
-## ⚡ Core Expertise
+## ⚡ Core Capabilities
 
-- 🔐 **AI Security & Governance**
-  - LLM vulnerability detection (prompt injection, leakage)
-  - Risk scoring & audit frameworks
-  - Secure AI system design
+🔐 **AI Security & Governance**  
+- LLM vulnerability detection (prompt injection, leakage)  
+- Risk scoring & audit frameworks  
+- Secure RAG & agent design  
 
-- 🤖 **LLM Systems & AI Agents**
-  - RAG pipelines & retrieval systems
-  - Fine-tuning (LoRA / QLoRA)
-  - Agent workflows & reasoning systems
+🤖 **LLM Systems Engineering**  
+- RAG pipelines & retrieval systems  
+- Fine-tuning (LoRA / QLoRA)  
+- Agent workflows & tool orchestration  
 
-- 🏗️ **Production AI Engineering**
-  - FastAPI microservices
-  - Docker & Kubernetes deployment
-  - Scalable ML pipelines
+🏗️ **Production AI Systems**  
+- FastAPI microservices  
+- Docker & Kubernetes deployment  
+- Scalable inference pipelines  
 
-- 📊 **Data & Predictive Systems**
-  - ETL pipelines (Snowflake, Spark, SQL)
-  - Forecasting, clustering, anomaly detection
-  - Decision-support analytics
+📊 **Data & Predictive Systems**  
+- ETL pipelines (Snowflake, Spark, SQL)  
+- Forecasting, anomaly detection  
+- Decision automation systems  
 
 ---
 
@@ -55,104 +62,71 @@ I specialize in solving these gaps by combining:
 
 ---
 
-### 🔹 Enterprise LLM Security Auditor  
-🔗 https://github.com/rahulsingh1397/Enterprise_LLM_Security_Auditor
+### 🛡️ Enterprise LLM Security Auditor  
+🔗 https://github.com/rahulsingh1397/Enterprise_LLM_Security_Auditor  
 
-**AI-powered security auditing framework for LLM-based systems**
+**Security auditing framework for LLM-based systems**
 
-- Detects **prompt injection vulnerabilities**
-- Identifies **data leakage risks in LLM pipelines**
-- Evaluates **model responses for unsafe behavior**
-- Designed for **enterprise AI governance and risk analysis**
-
-👉 Focus: **LLM Security, Risk Scoring, AI Governance**
+- Detects **prompt injection vulnerabilities**  
+- Identifies **data leakage risks in pipelines**  
+- Evaluates unsafe model behavior  
+- Designed for **enterprise AI governance**  
 
 ---
 
-### 🔹 MITRE ATT&CK Mapping Engine (Mitre-Core_v2)  
-🔗 https://github.com/rahulsingh1397/Mitre-Core_v2
+### 🧠 MITRE ATT&CK Mapping Engine  
+🔗 https://github.com/rahulsingh1397/Mitre-Core_v2  
 
-**Machine Learning + LLM system for cybersecurity threat mapping**
+**ML + LLM system for cybersecurity threat mapping**
 
-- Maps system activity/logs → **MITRE ATT&CK techniques**
-- Enables **threat classification and explainability**
-- Supports **security analysts with automated reasoning**
-- Bridges **ML outputs with real-world cybersecurity frameworks**
-
-👉 Focus: **Threat Intelligence, Explainable AI, Security Analytics**
+- Maps logs → **MITRE ATT&CK techniques**  
+- Provides **explainable threat classification**  
+- Supports **security analyst workflows**  
 
 ---
 
-### 🔹 Reinforcement Learning Anomaly Detection  
-🔗 https://github.com/rahulsingh1397/Reinforcement_learning_AnomalyDetection
+### 🤖 RL-Based Anomaly Detection System  
+🔗 https://github.com/rahulsingh1397/Reinforcement_learning_AnomalyDetection  
 
-**Adaptive anomaly detection system using reinforcement learning**
+**Adaptive anomaly detection using reinforcement learning**
 
-- Detects **unknown and evolving threat patterns**
-- Learns dynamic behavior in **cybersecurity environments**
-- Reduces false positives vs traditional rule-based systems
-- Can be extended for **real-time threat monitoring**
-
-👉 Focus: **Anomaly Detection, Adaptive Security, ML Systems**
+- Detects **unknown & evolving threats**  
+- Learns behavior dynamically  
+- Reduces false positives vs static rules  
 
 ---
 
-## 🧪 Currently Exploring
+## 🧪 Current Focus
 
-- Secure **AI agent architectures**
-- LLM **quantization & optimization**
-- AI **governance frameworks for enterprises**
-- Tools: Groq, PhiData, LangFlow
-
----
-
-## 🤝 Let’s Work Together
-
-I’m open to:
-- AI system design & consulting  
-- LLM security audits  
-- building production-grade AI pipelines  
-
-📫 **Email:** rahul.rs1397@gmail.com  
-🔗 **LinkedIn:** (add your link)
+- Secure **AI agent architectures**  
+- LLM **optimization & quantization**  
+- Enterprise **AI governance systems**  
 
 ---
 
 ## 🛠️ Tech Stack
 
-**AI / ML:**  
-Python • PyTorch • Scikit-learn • NLP • LLMs  
-
-**AI Systems:**  
-LangChain • FastAPI • RAG • Vector Databases  
-
-**Cloud & Data:**  
-AWS • Azure • Snowflake • Spark • SQL  
-
-**Infra:**  
-Docker • Kubernetes • CI/CD  
+**AI / ML:** Python • PyTorch • NLP • LLMs  
+**AI Systems:** LangChain • FastAPI • RAG  
+**Cloud & Data:** AWS • Azure • Snowflake • Spark  
+**Infra:** Docker • Kubernetes • CI/CD  
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&theme=tokyonight&hide_border=true" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rahulsingh1397&theme=tokyonight&hide_border=true" width="48%" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&theme=tokyonight&hide_border=true" width="48%" />
-</p>
-
----
-
-## ⚠️ Philosophy
+## 🎯 Philosophy
 
 > AI without security is a liability.  
 > AI without deployment is just a demo.  
 
-I focus on building systems that are:
+I build systems that are:
 - **secure**
 - **scalable**
-- **production-ready**
+- **usable in production**
+
+---
+
+<div align="center">
+
+✨ *Focused on building high-impact AI systems, not experiments.*  
+
+</div>
