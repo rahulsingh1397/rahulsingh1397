@@ -62,7 +62,7 @@ I'm an ML Security Engineer working at the intersection of machine learning and 
 
 ---
 
-### 🔍 Pillar 1 — Threat Detection ML
+### 🔍 Threat Detection ML
 
 ---
 
@@ -108,7 +108,7 @@ Static thresholds are why SOC teams ignore most of their alerts. This learns fro
 
 ---
 
-### 🛡️ Pillar 2 — LLM Security
+### 🛡️ LLM Security
 
 ---
 
@@ -145,7 +145,7 @@ Generic moderation APIs fail because they don't understand context. This learns 
 
 ---
 
-### 📋 Pillar 3 — AI Governance
+### 📋 AI Governance
 
 ---
 
