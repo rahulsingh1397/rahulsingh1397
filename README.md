@@ -215,11 +215,14 @@ The 2026 LLM security landscape shows that attackers are not just exploiting bug
 
 </div>
 
+## ⚡ Top Languages
+
 <div align="center">
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&theme=dark&hide_border=true&title_color=00F5D4&text_color=ffffff&bg_color=0a0a0a&langs_count=6&hide=jupyter%20notebook,html,css)
+<img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&theme=dark&hide_border=true&title_color=00F5D4&text_color=ffffff&bg_color=0a0a0a&langs_count=8&hide=Jupyter%20Notebook,HTML,CSS&size_weight=0.5&count_weight=0.5" />
 
 </div>
+
 
 ---
 
