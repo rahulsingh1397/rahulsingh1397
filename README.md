@@ -11,15 +11,11 @@
   <img src="https://img.shields.io/badge/🌐 Portfolio-rahulaiportfolio.netlify.app-00F5D4?style=for-the-badge" />
 </a>
 <a href="mailto:rahul.rs1397@gmail.com">
-  <img src="https://img.shields.io/badge/📩 Email-rahul.rs1397@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  <img src="https://img.shields.io/badge/📩 Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
 <a href="https://linkedin.com/in/rahulsingh1397">
-  <img src="https://img.shields.io/badge/LinkedIn-rahulsingh1397-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
-
-<br/><br/>
-
-![Profile Views](https://komarev.com/ghpvc/?username=rahulsingh1397&color=00F5D4&style=flat-square&label=profile+views)
 
 </div>
 
@@ -35,74 +31,99 @@ I'm an ML Security Engineer working at the intersection of machine learning and 
 
 **🛡️ LLM Security** — Automated red-teaming platforms that test production LLM deployments for prompt injection, jailbreaks, data leakage, and RAG poisoning — with actual reports, not just scripts.
 
-**📋 AI Governance** — Compliance monitoring systems for production ML — the unglamorous work that keeps regulated teams (healthcare, fintech, defense) from failing audits.
+**📋 AI Governance** — Compliance monitoring systems for production ML — the unglamorous work that keeps regulated teams from failing audits.
 
-> *I've seen what happens when AI ships without security. These projects exist because that's a solvable problem.*
+> *Most AI projects die in notebooks. Mine run in production against real attacks.*
 
 <br clear="right"/>
 
 ---
 
-## 🔍 Pillar 1 — Threat Detection ML
+## 📊 By The Numbers
 
-*Building ML systems that find real attacks in real data*
+<div align="center">
+
+| Metric | Value | Where |
+|--------|-------|-------|
+| Multi-domain clustering ARI | **0.8224** | MITRE-Core v2 |
+| Bridge edge Δ ARI | **+0.067** | DARPA OpTC |
+| Statistical significance | **p = 0.021** | DARPA OpTC |
+| Effect size | **Cohen's d = 1.28** | DARPA OpTC |
+| Security datasets evaluated | **9** | UNSW-NB15 · OpTC · BETH · TON\_IoT + 5 more |
+| MITRE ATT&CK tactics covered | **14 / 14** | MITRE-Core v2 |
+| Adversarial LLM tests per audit | **61** across 6 vuln classes | LLM Auditor |
+| SOC reporting effort reduced | **60%** | Sequretek |
+
+</div>
 
 ---
 
-### MITRE-Core v2 — Heterogeneous GNN Alert Correlation Engine
+## 🚀 Featured Projects
 
-<img align="right" src="https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif" width="175" />
+---
 
-🔗 [Mitre-Core_v2](https://github.com/rahulsingh1397/Mitre-Core_v2) &nbsp;·&nbsp; `Research`
+### 🔍 Pillar 1 — Threat Detection ML
 
-The centrepiece. SOC teams drown in thousands of disconnected alerts — this system correlates them into coherent attack campaigns and maps each one to MITRE ATT&CK tactics automatically.
+---
+
+#### MITRE-Core v2 — Heterogeneous GNN Alert Correlation Engine
+
+<img align="right" src="https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif" width="200" />
+
+🔗 [Mitre-Core_v2](https://github.com/rahulsingh1397/Mitre-Core_v2) &nbsp;·&nbsp; `Research · Production`
+
+SOC teams drown in disconnected alerts. This system correlates them into coherent MITRE ATT&CK-mapped attack campaigns automatically.
 
 **What makes it research-grade:**
-- Heterogeneous GNN (HGNN) treating hosts, IPs, and tactics as different node types — not a homogeneous graph pretending everything is equal
-- **Cross-sensor bridge edges** (IP↔hostname): proved statistically that connecting network and host sensors improves APT clustering — **ARI +0.067, p=0.021, Cohen's d=1.28**
-- Multi-domain training on **UNSW-NB15 + BETH + DARPA OpTC** → ARI **0.8224**
-- **9 real-world security datasets**, 14/14 MITRE ATT&CK tactics, SIEM integration layer
+- Heterogeneous GNN (HGNN) — hosts, IPs, and tactics treated as distinct node types with different edge semantics
+- **Cross-sensor bridge edges** (IP↔hostname): statistically proven to improve APT clustering — **ARI +0.067, p=0.021, Cohen's d=1.28 (large effect)**
+- Multi-domain ARI **0.8224** — trained across UNSW-NB15 + BETH + DARPA OpTC
+- **9 real-world security datasets** · 14/14 MITRE ATT&CK tactics · SIEM integration
+- 2-tier architecture: HGNN → Union-Find structural fallback with optional Transformer hybrid
 
-`PyTorch Geometric` `HDBSCAN` `Flask` `Docker` `DARPA OpTC` `UNSW-NB15` `Python`
+```
+With bridge edges:    ARI = 0.282 ± 0.048
+Without bridge edges: ARI = 0.215 ± 0.056
+Δ ARI = +0.067  |  p = 0.021  |  Cohen's d = 1.28
+```
+
+`PyTorch Geometric` `HDBSCAN` `Flask` `Plotly` `Docker` `DARPA OpTC` `UNSW-NB15`
 
 <br clear="right"/>
 
 ---
 
-### RL Logon Anomaly Detection — Adaptive SOC Threshold Engine
+#### RL Logon Anomaly Detection — Adaptive SOC Threshold Engine
 
 🔗 [Reinforcement_learning_AnomalyDetection](https://github.com/rahulsingh1397/Reinforcement_learning_AnomalyDetection) &nbsp;·&nbsp; `SOC ML`
 
-Static detection thresholds are why SOC teams ignore 90% of their alerts. This system learns from analyst feedback and adapts.
+Static thresholds are why SOC teams ignore most of their alerts. This learns from analyst feedback and adapts.
 
-- Aggregates authentication logs into **3-hour behavioral windows** per identity
-- **Reinforcement feedback loop** — analyst verdicts (true positive / false positive) directly update per-user thresholds
-- Distinguishes weekday vs weekend behavioral patterns automatically
-- Outputs **SIEM-ready JSON** anomaly summaries — plugs into existing ops stack
+- 3-hour behavioral windows per identity — source IP, destination, temporal patterns
+- **Reinforcement feedback loop** — analyst verdicts directly update per-user thresholds
+- Weekday vs weekend pattern separation per identity
+- SIEM-ready JSON anomaly output
 
 `Python` `Reinforcement Learning` `Pandas` `NumPy` `SIEM Integration`
 
 ---
 
-## 🛡️ Pillar 2 — LLM Security
-
-*Testing AI systems before attackers do*
-
-<img align="right" src="https://media.giphy.com/media/3o7aCSPqXE5C6T8tBC/giphy.gif" width="175" />
+### 🛡️ Pillar 2 — LLM Security
 
 ---
 
-### Enterprise LLM Security Auditor — Production Red-Teaming Platform
+#### Enterprise LLM Security Auditor — Production Red-Teaming Platform
+
+<img align="right" src="https://media.giphy.com/media/3o7aCSPqXE5C6T8tBC/giphy.gif" width="175" />
 
 🔗 [Enterprise_LLM_Security_Auditor](https://github.com/rahulsingh1397/Enterprise_LLM_Security_Auditor) &nbsp;·&nbsp; `LLM Security`
 
-Most LLM security "testing" is a person manually typing prompts. This turns red-teaming into a repeatable, client-ready workflow.
+Turns LLM red-teaming from a person manually typing prompts into a repeatable, client-ready workflow.
 
-- **61 adversarial tests** across 6 vulnerability classes: prompt injection, jailbreaks, PII leakage, data exfiltration, RAG poisoning, system prompt extraction
-- **Claude as semantic evaluator** — understands whether a response actually exposed a vulnerability, not just pattern-matching keywords
-- Full audit completes in **5–10 minutes** with live WebSocket progress
-- Generates executive-ready PDF reports with risk scores and remediation steps per finding
-- FastAPI backend + React frontend — actually deployable, not a notebook
+- **61 adversarial tests** across 6 vuln classes: prompt injection, jailbreaks, PII leakage, data exfiltration, RAG poisoning, system prompt extraction
+- **Claude as semantic evaluator** — understands whether a response actually exposed a vulnerability
+- Full audit in **5–10 minutes** with live WebSocket progress
+- Executive-ready PDF reports with risk scores and remediation steps
 
 `FastAPI` `React` `WebSockets` `SQLite` `Anthropic Claude API` `Docker`
 
@@ -110,41 +131,38 @@ Most LLM security "testing" is a person manually typing prompts. This turns red-
 
 ---
 
-### Community Rule Classification — Explainable NLP Security
+#### Community Rule Classification — Explainable NLP Security
 
-🔗 [Community_rule_classification](https://github.com/rahulsingh1397/Community_rule_classification) &nbsp;·&nbsp; `NLP · Security Adjacent`
+🔗 [Community_rule_classification](https://github.com/rahulsingh1397/Community_rule_classification) &nbsp;·&nbsp; `NLP · Security`
 
-Generic content moderation APIs fail because they don't understand context. This system learns the specific semantic rules of a community and explains *why* something violates them.
+Generic moderation APIs fail because they don't understand context. This learns the specific semantic rules of a community and explains *why* something violates them.
 
-- Transfer learning on transformer models fine-tuned to community-specific guidelines
-- **Explanation-first design** — model outputs the violated rule, not just a flag
-- **92% precision** on violation detection vs lower rates from keyword filters
-- Reduced moderator workload by ~60% in evaluation
+- Fine-tuned transformer with **explanation-first design** — outputs the violated rule, not just a flag
+- **92% precision** vs lower rates from keyword filters
+- ~60% reduction in moderator workload
 
-`PyTorch` `Transformers` `HuggingFace` `NLTK` `Python`
-
----
-
-## 📋 Pillar 3 — AI Governance & Compliance
-
-*Making AI auditable for the teams that have to answer to regulators*
+`PyTorch` `Transformers` `HuggingFace` `NLTK`
 
 ---
 
-### AI Compliance Monitor — Agent-Based Production ML Governance
+### 📋 Pillar 3 — AI Governance
+
+---
+
+#### AI Compliance Monitor — Agent-Based Production ML Governance
 
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="170" />
 
 🔗 [AI_Compliance_Monitor](https://github.com/rahulsingh1397/AI_Compliance_Monitor) &nbsp;·&nbsp; `AI Governance`
 
-The unglamorous but necessary work. Enterprise AI programs ship models without a unified way to monitor privacy exposure, log AI behavior, or generate audit evidence. This fixes that.
+Enterprise AI programs ship models without a unified way to monitor behavior or generate audit evidence. This fixes that.
 
-- **6 specialized agents** (Data Discovery, Monitoring, Privacy, Remediation, Reporting, UI) coordinating via shared event bus
-- Native integrations: **QRadar, JIRA, Slack, email** — alerts flow into the stack teams already use
+- **6 specialized agents** (Data Discovery, Monitoring, Privacy, Remediation, Reporting, UI) on shared event bus
+- Native integrations: **QRadar · JIRA · Slack · email**
 - One-click **PDF + PPT audit exports** auto-generated from live scan data
-- Designed for **SOC2 / ISO 27001** compliance workflows in regulated environments
+- Built for **SOC2 / ISO 27001** compliance workflows
 
-`Python` `FastAPI` `Kafka` `QRadar` `Slack API` `xhtml2pdf` `Docker`
+`Python` `FastAPI` `Kafka` `QRadar` `Slack API` `Docker`
 
 <br clear="right"/>
 
@@ -154,70 +172,60 @@ The unglamorous but necessary work. Enterprise AI programs ship models without a
 
 ```
 Threat Detection    MITRE ATT&CK · Alert Correlation · Anomaly Detection · SIEM Integration
-                    Behavioral Analysis · SOC Workflows · Incident Response ML
+                    Behavioral Analysis · SOC Workflows · Provenance Graph Analysis
 
 LLM Security        Prompt Injection · Jailbreak Testing · RAG Poisoning · PII Leakage
-                    LLM Red Teaming · Adversarial Evaluation · AI Risk Assessment
+                    LLM Red Teaming · Adversarial Evaluation · Agentic AI Security
 
 Graph ML            PyTorch Geometric · Heterogeneous GNN · HDBSCAN · NetworkX
-                    Unsupervised Clustering · Graph Neural Networks · Statistical Validation
+                    Unsupervised Clustering · Statistical Validation (ARI · Cohen's d)
 
 AI Governance       Model Monitoring · Drift Detection · Audit Trail Generation
                     Compliance Frameworks · AI Auditing · Explainability
 
-LLM Engineering     LangChain · RAG · Fine-Tuning · Anthropic Claude API
-                    Agent Workflows · Prompt Engineering · HuggingFace
-
-Production Stack    Python · FastAPI · Docker · Kubernetes · AWS · CI/CD · PyTorch
+Production Stack    Python · FastAPI · Docker · Kubernetes · AWS · PyTorch · CI/CD
 ```
-
----
-
-## 📊 By The Numbers
-
-<div align="center">
-
-```
-  0.8224 ARI          p = 0.021           61 Tests            60%
-  ─────────────       ─────────────       ─────────────       ─────────────
-  Multi-domain        Bridge edge         Adversarial         SOC reporting
-  threat clustering   statistical proof   LLM security        effort reduced
-  MITRE-Core v2       DARPA OpTC          tests per audit     Sequretek
-```
-
-</div>
 
 ---
 
 ## 🧪 Active Research
 
+Pulled directly from [MITRE-Core v2 current state](https://github.com/rahulsingh1397/Mitre-Core_v2):
+
+| What | Status | Details |
+|------|--------|---------|
+| **v3.0 — HDBSCAN border point fix** | 🔄 In Progress | Replace `clusterer.probabilities_` with `all_points_membership_vectors()` — fixes border points routing to UF incorrectly |
+| **Multi-domain expansion** | 📋 Planned | LANL 2015 (temporal network flow) + DAPT2020 → 5-domain training |
+| **Cross-domain transfer studies** | 📋 Planned | OpTC → UNSW/BETH performance analysis |
+| **arXiv preprint** | ✍️ Drafting | Bridge edge hypothesis: ARI +0.067, p=0.021, d=1.28 |
+| **Domain-specialized checkpoints** | 🔭 Research | Separate models for network IT / host APT / IoT instead of forced transfer |
+
+**Why this matters right now:**
+M-Trends 2026 confirms that state-sponsored and financially motivated actors are integrating AI to accelerate the attack lifecycle — malware families like PROMPTFLUX and PROMPTSTEAL now actively query LLMs mid-execution to evade detection. Static correlation systems can't keep up. Multi-domain GNNs that adapt across sensor types are the direction the field is moving.
+
+The 2026 LLM security landscape shows that attackers are not just exploiting bugs — they are manipulating how models interpret instructions, assemble context, and interact with connected tools. This is exactly why the LLM Security Auditor focuses on semantic evaluation, not just keyword matching.
+
+---
+
+## 📈 GitHub Activity
+
 <div align="center">
 
-| What | Status |
-|------|--------|
-| MITRE-Core v3.0 — `all_points_membership_vectors()` HDBSCAN fix | 🔄 In Progress |
-| Multi-domain expansion: LANL 2015 + DAPT2020 | 📋 Planned |
-| arXiv preprint — bridge edge hypothesis | ✍️ Drafting |
-| Conference target: IEEE S&P workshops / CAMLIS / RAID | 🎯 Targeting |
+[![GitHub Streak](https://streak-stats.demolab.com?user=rahulsingh1397&theme=dark&hide_border=true&ring=00F5D4&fire=00F5D4&currStreakLabel=00F5D4&background=0a0a0a)](https://git.io/streak-stats)
+
+</div>
+
+<div align="center">
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&theme=dark&hide_border=true&title_color=00F5D4&text_color=ffffff&bg_color=0a0a0a&langs_count=6&hide=jupyter%20notebook,html,css)
 
 </div>
 
 ---
 
-## 📈 GitHub Stats
-
 <div align="center">
 
-<img height="155" src="https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&theme=dark&hide_border=true&title_color=00F5D4&icon_color=00F5D4&text_color=ffffff&bg_color=0a0a0a" />
-<img height="155" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&theme=dark&hide_border=true&title_color=00F5D4&text_color=ffffff&bg_color=0a0a0a&langs_count=6" />
-
-</div>
-
----
-
-<div align="center">
-
-<img src="https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif" width="100" />
+<img src="https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif" width="90" />
 
 > **AI without security is a liability. Security without ML can't scale.**
 
