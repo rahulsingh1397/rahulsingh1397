@@ -74,7 +74,7 @@ I'm an ML Security Engineer working at the intersection of machine learning and 
 
 SOC teams drown in disconnected alerts. This system correlates them into coherent MITRE ATT&CK-mapped attack campaigns automatically.
 
-**What makes it research-grade:**
+**What makes it best:**
 - Heterogeneous GNN (HGNN) — hosts, IPs, and tactics treated as distinct node types with different edge semantics
 - **Cross-sensor bridge edges** (IP↔hostname): statistically proven to improve APT clustering — **ARI +0.067, p=0.021, Cohen's d=1.28 (large effect)**
 - Multi-domain ARI **0.8224** — trained across UNSW-NB15 + BETH + DARPA OpTC
