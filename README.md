@@ -3,7 +3,7 @@
 # Rahul Singh
 ### ML Security Engineer · LLM Security · Threat Detection · AI Governance
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Threat+Detection+ML+%7C+MITRE+ATT%26CK+Systems;LLM+Red+Teaming+%7C+Prompt+Injection+Testing;AI+Governance+%7C+Compliance+Monitoring;Anomaly+Detection+%7C+SOC+ML+Engineering;GNN+Research+%7C+ARI+0.8224+%7C+p%3D0.021" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Threat+Detection+ML+%7C+MITRE+ATT%26CK+Systems;LLM+Red+Teaming+%7C+Prompt+Injection+Testing;AI+Governance+%7C+Compliance+Monitoring;Anomaly+Detection+%7C+SOC+ML+Engineering;GNN+Research+%7C+Cross-Sensor+Alert+Correlation" />
 
 <br/>
 
@@ -45,11 +45,9 @@ I'm an ML Security Engineer working at the intersection of machine learning and 
 
 | Metric | Value | Where |
 |--------|-------|-------|
-| Multi-domain clustering ARI | **0.8224** | MITRE-Core v2 |
-| Bridge edge Δ ARI | **+0.067** | DARPA OpTC |
-| Statistical significance | **p = 0.021** | DARPA OpTC |
-| Effect size | **Cohen's d = 1.28** | DARPA OpTC |
 | Security datasets evaluated | **9** | UNSW-NB15 · OpTC · BETH · TON\_IoT + 5 more |
+| Bridge edge improvement (OpTC) | **ARI 0.215 → 0.282 (+6.7 pp)** | DARPA OpTC |
+| Bridge edge coverage | **21% of alerts** | DARPA OpTC (IP↔hostname pairs) |
 | MITRE ATT&CK tactics covered | **14 / 14** | MITRE-Core v2 |
 | Adversarial LLM tests per audit | **61** across 6 vuln classes | LLM Auditor |
 | SOC reporting effort reduced | **60%** | Sequretek |
@@ -74,17 +72,19 @@ I'm an ML Security Engineer working at the intersection of machine learning and 
 
 SOC teams drown in disconnected alerts. This system correlates them into coherent MITRE ATT&CK-mapped attack campaigns automatically.
 
-**What makes it best:**
+**What makes it different:**
 - Heterogeneous GNN (HGNN) — hosts, IPs, and tactics treated as distinct node types with different edge semantics
-- **Cross-sensor bridge edges** (IP↔hostname): statistically proven to improve APT clustering — **ARI +0.067, p=0.021, Cohen's d=1.28 (large effect)**
-- Multi-domain ARI **0.8224** — trained across UNSW-NB15 + BETH + DARPA OpTC
+- **Cross-sensor bridge edges** (IP↔hostname): improved OpTC APT clustering from ARI 0.215 → 0.282 (+6.7 pp) consistently across all gate configurations — preliminary finding, single dataset
+- Bridge edge coverage: 21% of OpTC alerts carry IP↔hostname cross-sensor pairs
 - **9 real-world security datasets** · 14/14 MITRE ATT&CK tactics · SIEM integration
 - 2-tier architecture: HGNN → Union-Find structural fallback with optional Transformer hybrid
 
 ```
 With bridge edges:    ARI = 0.282 ± 0.048
 Without bridge edges: ARI = 0.215 ± 0.056
-Δ ARI = +0.067  |  p = 0.021  |  Cohen's d = 1.28
+Δ ARI = +6.7 pp — consistent across all gate configurations
+Bridge edge coverage: 21% of OpTC alerts (IP↔hostname pairs)
+Preliminary analysis — single dataset, single sweep
 ```
 
 `PyTorch Geometric` `HDBSCAN` `Flask` `Plotly` `Docker` `DARPA OpTC` `UNSW-NB15`
@@ -178,7 +178,7 @@ LLM Security        Prompt Injection · Jailbreak Testing · RAG Poisoning · PI
                     LLM Red Teaming · Adversarial Evaluation · Agentic AI Security
 
 Graph ML            PyTorch Geometric · Heterogeneous GNN · HDBSCAN · NetworkX
-                    Unsupervised Clustering · Statistical Validation (ARI · Cohen's d)
+                    Unsupervised Clustering · Cross-Sensor Correlation
 
 AI Governance       Model Monitoring · Drift Detection · Audit Trail Generation
                     Compliance Frameworks · AI Auditing · Explainability
@@ -195,9 +195,11 @@ Pulled directly from [MITRE-Core v2 current state](https://github.com/rahulsingh
 | What | Status | Details |
 |------|--------|---------|
 | **v3.0 — HDBSCAN border point fix** | 🔄 In Progress | Replace `clusterer.probabilities_` with `all_points_membership_vectors()` — fixes border points routing to UF incorrectly |
+| **Hybrid SSL + Supervised architecture** | 🔄 In Progress | Dual-path loss: NT-Xent + SupCon — Stage 1 SSL warmup, Stage 2 λ-annealed supervised fine-tuning |
+| **network_v9_v2 (15-dim self-supervised)** | 🔄 Training | First true 15-dim checkpoint — UNSW + NSL + TON joint training on RTX 5060 Ti |
 | **Multi-domain expansion** | 📋 Planned | LANL 2015 (temporal network flow) + DAPT2020 → 5-domain training |
-| **Cross-domain transfer studies** | 📋 Planned | OpTC → UNSW/BETH performance analysis |
-| **arXiv preprint** | ✍️ Drafting | Bridge edge hypothesis: ARI +0.067, p=0.021, d=1.28 |
+| **Bridge edge replication** | 📋 Planned | Multi-seed validation across UNSW and TON_IoT — current finding is single dataset, single sweep |
+| **arXiv preprint** | ✍️ Drafting | Bridge edge cross-sensor correlation: preliminary findings on DARPA OpTC |
 | **Domain-specialized checkpoints** | 🔭 Research | Separate models for network IT / host APT / IoT instead of forced transfer |
 
 **Why this matters right now:**
@@ -214,8 +216,6 @@ The 2026 LLM security landscape shows that attackers are not just exploiting bug
 [![GitHub Streak](https://streak-stats.demolab.com?user=rahulsingh1397&theme=dark&hide_border=true&ring=00F5D4&fire=00F5D4&currStreakLabel=00F5D4&background=0a0a0a)](https://git.io/streak-stats)
 
 </div>
-
-
 
 <div align="center">
 
