@@ -1,7 +1,7 @@
 <div align="center">
 
 # Rahul Singh
-### ML Security Engineer · LLM Security · Threat Detection · AI Governance
+### ML Engineer · LLM Security · Threat Detection · AI Governance
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Threat+Detection+ML+%7C+MITRE+ATT%26CK+Systems;LLM+Red+Teaming+%7C+Prompt+Injection+Testing;AI+Governance+%7C+Compliance+Monitoring;Anomaly+Detection+%7C+SOC+ML+Engineering;GNN+Research+%7C+Cross-Sensor+Alert+Correlation" />
 
@@ -25,7 +25,7 @@
 
 <img align="right" src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" width="190" />
 
-I'm an ML Security Engineer working at the intersection of machine learning and cybersecurity. My work breaks into three connected areas:
+I'm an ML Engineer working at the intersection of machine learning and cybersecurity. My work breaks into three connected areas:
 
 **🔍 Threat Detection ML** — GNN-based systems that cluster raw security alerts into attack campaigns mapped to MITRE ATT&CK. Research-grade, evaluated on real enterprise datasets.
 
