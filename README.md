@@ -2,9 +2,9 @@
 
 # Rahul Singh
 
-### ML Engineer · LLM Security · Threat Detection · AI Governance
+### AI/ML Engineer · Graph Neural Networks · LLM Systems · Production AI
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Threat+Detection+ML+%7C+MITRE+ATT%26CK+Systems;LLM+Red+Teaming+%7C+Prompt+Injection+Testing;AI+Governance+%7C+Compliance+Monitoring;Anomaly+Detection+%7C+SOC+ML+Engineering;GNN+Research+%7C+Cross-Sensor+Alert+Correlation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Production+ML+%7C+End-to-End+Ownership;Graph+Neural+Networks+%7C+Heterogeneous+Graphs;LLM+Pipelines+%7C+RAG+%7C+Agentic+Systems;Evaluation+Frameworks+%7C+Research+Rigour;Security+%7C+Healthcare+%7C+Enterprise+AI" />
 
 <br/>
 
@@ -29,15 +29,17 @@
 
 <img align="right" src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" width="190" />
 
-I design and deploy **machine learning systems for security-critical environments**. My work breaks into three connected areas:
+I build **production AI systems** — from heterogeneous GNNs to LLM pipelines — across security, healthcare, and enterprise environments.
 
-**🔍 Threat Detection ML** — GNN-based systems that cluster raw security alerts into attack campaigns mapped to MITRE ATT&CK. Research-grade, evaluated on real enterprise datasets.
+Five years of owning ML end-to-end: architecture decisions, training pipelines, evaluation frameworks, production deployment, and continuous improvement. Not just notebooks — systems that run against real data, real users, and real constraints.
 
-**🛡️ LLM Security** — Automated red-teaming platforms that test production LLM deployments for prompt injection, jailbreaks, data leakage, and RAG poisoning — with actual reports, not just scripts.
+**🔬 ML Research** — Graph neural networks, unsupervised clustering, anomaly detection. Evaluated on real-world datasets with rigorous methodology and honest reporting.
 
-**📋 AI Governance** — Compliance monitoring systems for production ML — the unglamorous work that keeps regulated teams from failing audits.
+**🤖 LLM Systems** — RAG pipelines, ReAct agents, evaluation harnesses, prompt engineering. Built for regulated environments where every output needs to be auditable.
 
-> *Most AI projects die in notebooks. Mine run in production against real attacks.*
+**⚙️ Production Engineering** — FastAPI, Docker, Kubernetes, CI/CD. Systems that run at scale, not just demos.
+
+> *Most AI projects die in notebooks. Mine run in production.*
 
 <br clear="right"/>
 
@@ -54,6 +56,8 @@ I design and deploy **machine learning systems for security-critical environment
 |Bridge edge coverage           |**21% of alerts**              |DARPA OpTC (IP↔hostname pairs)            |
 |MITRE ATT&CK tactics covered   |**14 / 14**                    |MITRE-Core v2                             |
 |Adversarial LLM tests per audit|**61** across 6 vuln classes   |LLM Auditor                               |
+|RAG pipeline queries daily     |**2K–5K**                      |Syneos Health                             |
+|Hallucination rate reduction   |**via RAGAS-driven iteration** |Syneos Health                             |
 |SOC reporting effort reduced   |**60%**                        |Sequretek                                 |
 
 </div>
@@ -64,7 +68,7 @@ I design and deploy **machine learning systems for security-critical environment
 
 -----
 
-### 🔍 Threat Detection ML
+### 🔬 ML Research
 
 -----
 
@@ -74,7 +78,7 @@ I design and deploy **machine learning systems for security-critical environment
 
 🔗 [Mitre-Core_v2](https://github.com/rahulsingh1397/Mitre-Core_v2)  ·  `Research · Production`
 
-SOC teams drown in disconnected alerts. This system correlates them into coherent MITRE ATT&CK-mapped attack campaigns automatically.
+Unsupervised heterogeneous GNN that clusters raw security alerts into structured attack campaigns — without labeled training data.
 
 **Architecture**
 
@@ -107,35 +111,34 @@ High confidence    Low confidence
        └───────┬────────┘
                │
                ▼
-   MITRE ATT&CK Campaign Map
+   Structured Campaign Output
 ```
 
-**What makes it different:**
+**Research contributions:**
 
-- Heterogeneous GNN — hosts, IPs, and tactics as distinct node types with different edge semantics
-- **Cross-sensor bridge edges** (IP↔hostname): ARI 0.215 → 0.282 (+6.7 pp) on DARPA OpTC — preliminary finding, single dataset
-- **9 real-world security datasets** · 14/14 MITRE ATT&CK tactics · SIEM integration
-- 2-tier architecture: HGNN semantic clustering + Union-Find structural fallback
+- Novel heterogeneous graph construction — hosts, IPs, and tactics as distinct node types with separate edge semantics
+- **Cross-sensor bridge edges** (IP↔hostname): ARI 0.215 → 0.282 (+6.7 pp) on DARPA OpTC — preliminary finding, single dataset, single sweep
+- Confidence-gated hybrid clustering: HGNN for high-confidence alerts, Union-Find structural fallback for uncertain ones
+- Rigorous evaluation across **9 real-world datasets** with honest failure documentation (BETH, NSL-KDD limitations clearly reported)
 
 ```
 With bridge edges:    ARI = 0.282 ± 0.048
 Without bridge edges: ARI = 0.215 ± 0.056
 Δ ARI = +6.7 pp — consistent across all gate configurations
-Bridge edge coverage: 21% of OpTC alerts (IP↔hostname pairs)
 Preliminary analysis — single dataset, single sweep
 ```
 
-`PyTorch Geometric` `HDBSCAN` `Flask` `Plotly` `Docker` `DARPA OpTC` `UNSW-NB15`
+`PyTorch Geometric` `HDBSCAN` `HGT` `Flask` `Docker` `DARPA OpTC` `UNSW-NB15`
 
 <br clear="right"/>
 
 -----
 
-#### RL Logon Anomaly Detection — Adaptive SOC Threshold Engine
+#### RL Logon Anomaly Detection — Adaptive Threshold Engine
 
-🔗 [Reinforcement_learning_AnomalyDetection](https://github.com/rahulsingh1397/Reinforcement_learning_AnomalyDetection)  ·  `SOC ML`
+🔗 [Reinforcement_learning_AnomalyDetection](https://github.com/rahulsingh1397/Reinforcement_learning_AnomalyDetection)  ·  `Anomaly Detection · RL`
 
-Static thresholds are why SOC teams ignore most of their alerts. This learns from analyst feedback and adapts.
+Per-user behavioral anomaly detection that adapts thresholds from analyst feedback — replacing static rules with learned, dynamic profiles.
 
 **Architecture**
 
@@ -155,33 +158,90 @@ Windows Event Logs
 │   State: user profile  │
 │   Action: threshold    │
 │   Reward: analyst      │
-│   feedback             │
+│           feedback     │
 └──────────┬────────────┘
            │
            ▼
   Anomaly Score → SIEM
 ```
 
-- 3-hour behavioral windows per identity — source IP, destination, temporal patterns
-- **Reinforcement feedback loop** — analyst verdicts directly update per-user thresholds
-- Weekday vs weekend pattern separation per identity
-- SIEM-ready JSON anomaly output
+- 3-hour behavioral windows per identity across source IP, destination, and temporal dimensions
+- **Reinforcement feedback loop** — analyst verdicts directly retrain per-user thresholds
+- Weekday vs weekend behavioral separation per identity
+- SIEM-ready JSON output
 
 `Python` `Reinforcement Learning` `Pandas` `NumPy` `SIEM Integration`
 
 -----
 
-### 🛡️ LLM Security
+### 🤖 LLM Systems
 
 -----
 
-#### Enterprise LLM Security Auditor — Production Red-Teaming Platform
+#### Enterprise AI Knowledge Agent — Production RAG + ReAct System
+
+`Production · Regulated Environment`
+
+Production-grade RAG pipeline and LangChain ReAct agent serving 50–100 clinical analysts across 50K+ sensitive documents in a HIPAA-regulated environment.
+
+**Architecture**
+
+```
+User Query
+    │
+    ▼
+┌─────────────────────────────────────┐
+│  Governance Layer                    │
+│  PII Detection (Presidio + regex)    │
+│  RBAC (OPA policies)                 │
+└──────────────┬──────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────┐
+│  ReAct Agent (LangChain)             │
+│  Tool Router                         │
+│  Retrieval · SQL · API               │
+└──────┬──────────────┬───────────────┘
+       │              │
+       ▼              ▼
+Hybrid Retrieval    SQL Tool
+BM25 + Dense        Structured
+FAISS + RRF         financial data
+Cross-encoder
+re-ranking
+       │              │
+       └──────┬───────┘
+              │
+              ▼
+         GPT-4o / LLM
+              │
+              ▼
+    Post-gen PII scan
+    Confidence scoring
+    Audit logging (S3)
+              │
+              ▼
+        Final Response
+```
+
+- End-to-end ownership: ingestion → chunking → embedding → retrieval → reranking → generation → evaluation → deployment
+- Hybrid retrieval: BM25 + dense embeddings fused with RRF — Recall@5 improved from 0.68 → 0.91
+- Cross-encoder re-ranking (BGE-reranker-v2-m3) — nDCG improvement +18–27%
+- Double-layer PII governance: pre-LLM Presidio scan + post-generation masking — zero incidents in production
+- RAGAS + LangSmith evaluation: faithfulness, answer relevance, context precision tracked continuously
+- P99 latency: 1.45s at 2K–5K daily queries across 50–100 concurrent analysts
+
+`LangChain` `OpenAI` `FAISS` `FastAPI` `Docker` `RAGAS` `LangSmith` `spaCy`
+
+-----
+
+#### Enterprise LLM Security Auditor — Adversarial Evaluation Harness
 
 <img align="right" src="https://media.giphy.com/media/3o7aCSPqXE5C6T8tBC/giphy.gif" width="175" />
 
-🔗 [Enterprise_LLM_Security_Auditor](https://github.com/rahulsingh1397/Enterprise_LLM_Security_Auditor)  ·  `LLM Security`
+🔗 [Enterprise_LLM_Security_Auditor](https://github.com/rahulsingh1397/Enterprise_LLM_Security_Auditor)  ·  `LLM Evaluation`
 
-Turns LLM red-teaming from a person manually typing prompts into a repeatable, client-ready workflow.
+Systematic evaluation harness for measuring LLM vulnerability surface in production deployments — repeatable, client-ready, semantically evaluated.
 
 **Architecture**
 
@@ -210,42 +270,28 @@ Target LLM Endpoint
      Remediation Steps
 ```
 
-- **61 adversarial tests** across 6 vuln classes: prompt injection, jailbreaks, PII leakage, data exfiltration, RAG poisoning, system prompt extraction
-- **Claude as semantic evaluator** — understands whether a response actually exposed a vulnerability
+- **61 adversarial tests** across 6 vulnerability classes
+- **Claude as semantic evaluator** — judges whether a response actually exposed a vulnerability, not just keyword matching
 - Full audit in **5–10 minutes** with live WebSocket progress
-- Executive-ready PDF reports with risk scores and remediation steps
+- Executive-ready PDF reports with per-class risk scores and remediation steps
 
-`FastAPI` `React` `WebSockets` `SQLite` `Anthropic Claude API` `Docker`
+`FastAPI` `React` `WebSockets` `Anthropic Claude API` `Docker`
 
 <br clear="right"/>
 
 -----
 
-#### Community Rule Classification — Explainable NLP Security
-
-🔗 [Community_rule_classification](https://github.com/rahulsingh1397/Community_rule_classification)  ·  `NLP · Security`
-
-Generic moderation APIs fail because they don’t understand context. This learns the specific semantic rules of a community and explains *why* something violates them.
-
-- Fine-tuned transformer with **explanation-first design** — outputs the violated rule, not just a flag
-- **92% precision** vs lower rates from keyword filters
-- ~60% reduction in moderator workload
-
-`PyTorch` `Transformers` `HuggingFace` `NLTK`
+### ⚙️ Production Systems
 
 -----
 
-### 📋 AI Governance
-
------
-
-#### AI Compliance Monitor — Multi-Module Production ML Governance
+#### AI Compliance Monitor — Multi-Module ML Governance System
 
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="170" />
 
-🔗 [AI_Compliance_Monitor](https://github.com/rahulsingh1397/AI_Compliance_Monitor)  ·  `AI Governance`
+🔗 [AI_Compliance_Monitor](https://github.com/rahulsingh1397/AI_Compliance_Monitor)  ·  `MLOps · Governance`
 
-Enterprise AI programs ship models without a unified way to monitor behavior or generate audit evidence. This fixes that.
+Event-driven multi-module system for monitoring production ML behavior and generating regulatory audit evidence automatically.
 
 **Architecture**
 
@@ -256,10 +302,9 @@ Enterprise AI programs ship models without a unified way to monitor behavior or 
    │      │      │      │      │
    ▼      ▼      ▼      ▼      ▼
  Data  Monitor Privacy Remed Report
- Disc   Agent   Agent  Agent  Agent
- Agent  (ML     (Diff  (Human (PDF·
- (PII   anomaly priv·  apprvl PPT)
- scan)  detect) fedlt) reqd)
+ Disc   (ML    (Diff   (Human  (PDF·
+ (PII  anomaly  priv·  apprvl  PPT)
+ scan) detect) fedlt)  reqd)
    │      │      │      │      │
    └──────┴──────┴──────┴──────┘
                   │
@@ -269,10 +314,9 @@ Enterprise AI programs ship models without a unified way to monitor behavior or 
 
 - **6 specialized modules** coordinated through event-driven orchestration
 - ML-powered anomaly detection: **Isolation Forest + Autoencoders**
-- Privacy-preserving: **differential privacy · federated learning · zero-knowledge proofs**
+- Privacy-preserving techniques: **differential privacy · federated learning · zero-knowledge proofs**
 - Native integrations: **QRadar · JIRA · Slack · email**
-- One-click **PDF + PPT audit exports** auto-generated from live scan data
-- Built for **SOC2 / ISO 27001 / GDPR / HIPAA** compliance workflows
+- One-click **PDF + PPT audit exports** for SOC2 / ISO 27001 / GDPR / HIPAA
 
 `Python` `FastAPI` `Kafka` `QRadar` `Slack API` `Docker`
 
@@ -280,22 +324,34 @@ Enterprise AI programs ship models without a unified way to monitor behavior or 
 
 -----
 
+#### Community Rule Classification — Explainable NLP
+
+🔗 [Community_rule_classification](https://github.com/rahulsingh1397/Community_rule_classification)  ·  `NLP · Classification`
+
+Fine-tuned transformer that classifies content violations and explains *which rule* was violated — not just a flag.
+
+- **Explanation-first design** — outputs the violated rule with reasoning, not just a binary label
+- **92% precision** vs lower rates from keyword filters
+- ~60% reduction in moderator workload
+
+`PyTorch` `Transformers` `HuggingFace` `NLTK`
+
+-----
+
 ## ⚡ Technical Arsenal
 
 ```
-Threat Detection    MITRE ATT&CK · Alert Correlation · Anomaly Detection · SIEM Integration
-                    Behavioral Analysis · SOC Workflows · Provenance Graph Analysis
-
-LLM Security        Prompt Injection · Jailbreak Testing · RAG Poisoning · PII Leakage
-                    LLM Red Teaming · Adversarial Evaluation · Agentic AI Security
-
 Graph ML            PyTorch Geometric · Heterogeneous GNN · HDBSCAN · NetworkX
-                    Unsupervised Clustering · Cross-Sensor Correlation
+                    Unsupervised Clustering · Confidence Calibration · Graph Construction
 
-AI Governance       Model Monitoring · Drift Detection · Audit Trail Generation
-                    Compliance Frameworks · AI Auditing · Explainability
+LLM Engineering     RAG Pipelines · ReAct Agents · Prompt Engineering · Tool Use
+                    RAGAS · LangSmith · Evaluation Frameworks · Hallucination Mitigation
 
-Production Stack    Python · FastAPI · Docker · Kubernetes · AWS · PyTorch · CI/CD
+ML Fundamentals     Anomaly Detection · RL · Transformers · XGBoost · scikit-learn
+                    Feature Engineering · Model Calibration · Statistical Testing
+
+Production Stack    FastAPI · Docker · Kubernetes · AWS · CI/CD · Redis · Kafka
+                    Model Monitoring · Drift Detection · Audit Logging · RBAC
 ```
 
 -----
@@ -311,9 +367,6 @@ Production Stack    Python · FastAPI · Docker · Kubernetes · AWS · PyTorch 
 |**Bridge edge replication**               |📋 Planned    |Multi-seed validation across UNSW and TON_IoT                            |
 |**arXiv preprint**                        |✍️ Drafting   |Bridge edge cross-sensor correlation: preliminary findings on DARPA OpTC |
 |**Domain-specialized checkpoints**        |🔭 Research   |Separate models for network IT / host APT / IoT                          |
-
-**Why this matters:**
-M-Trends 2026 confirms state-sponsored actors are integrating AI mid-attack — malware families like PROMPTFLUX and PROMPTSTEAL now query LLMs during execution to evade detection. Static correlation systems can’t keep up. Multi-domain GNNs that adapt across sensor types are where the field is moving.
 
 -----
 
@@ -332,11 +385,11 @@ M-Trends 2026 confirms state-sponsored actors are integrating AI mid-attack — 
 <img src="https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif" width="90" />
 
 
-> **AI without security is a liability. Security without ML can’t scale.**
+> *Building AI systems that are accurate, reliable, and production-ready.*
 
 *Stevens Institute of Technology · MS Information Systems · Jersey City, NJ*
 
-**Open to:** ML Security Engineer · Threat Detection ML · LLM Security Engineer · Applied AI Security
+**Open to:** AI/ML Engineer · Applied ML Researcher · LLM Systems Engineer · ML Platform Engineer
 
 <br/>
 
