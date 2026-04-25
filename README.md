@@ -18,8 +18,12 @@
   <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
 <a href="https://github.com/sponsors/rahulsingh1397">
-  <img src="https://img.shields.io/badge/❤️ Sponsor-Fund My Work-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" />
+  <img src="https://img.shields.io/badge/❤️ Sponsor-Fund My Work-EA4AAA?style=for-the-badge&logo=githubsponsons&logoColor=white" />
 </a>
+
+<br/>
+
+![Profile Views](https://komarev.com/ghpvc/?username=rahulsingh1397&color=00F5D4&style=for-the-badge&label=PROFILE+VIEWS)
 
 </div>
 
@@ -310,6 +314,8 @@ Production Stack    FastAPI · Docker · Kubernetes · AWS · CI/CD · Redis · 
 ## 📈 GitHub Activity
 
 <div align="center">
+
+![Profile Views](https://komarev.com/ghpvc/?username=rahulsingh1397&color=00F5D4&style=for-the-badge&label=PROFILE+VIEWS)
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=rahulsingh1397&theme=dark&hide_border=true&ring=00F5D4&fire=00F5D4&currStreakLabel=00F5D4&background=0a0a0a)](https://git.io/streak-stats)
 
