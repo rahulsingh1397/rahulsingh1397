@@ -279,9 +279,6 @@ Event-driven ML governance system for monitoring production AI behavior and gene
 
 ![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=050816&color=22d3ee&line=06b6d4&point=67e8f9&area_color=164e63&area=true&hide_border=true&radius=10)
 
-<br/><br/>
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&theme=dark&hide_border=true&bg_color=050816&title_color=00F5D4&text_color=ffffff&icon_color=00F5D4)
 
 </div>
 
