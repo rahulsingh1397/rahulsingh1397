@@ -4,7 +4,7 @@
 
 ### AI/ML Engineer · Graph Neural Networks · RAG Systems · Production ML
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Production+ML+%7C+End-to-End+Ownership;Graph+Neural+Networks+%7C+Heterogeneous+Graphs;LLM+Pipelines+%7C+RAG+%7C+Agentic+Systems;Evaluation+Frameworks+%7C+Research+Rigour;Security+%7C+Compliance+%7C+Enterprise+AI" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Production+ML+%7C+End-to-End+Ownership;Graph+Neural+Networks+%7C+Heterogeneous+Graphs;LLM+Pipelines+%7C+RAG+%7C+Agentic+Systems;Evaluation+Frameworks+%7C+Research+Rigour;Security+%7C+Healthcare+%7C+Enterprise+AI" />
 
 <br/>
 
@@ -273,15 +273,15 @@ Event-driven ML governance system for monitoring production AI behavior and gene
 
 <div align="center">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=rahulsingh1397&theme=dark&hide_border=true&ring=00F5D4&fire=00F5D4&currStreakLabel=00F5D4&background=0a0a0a)](https://git.io/streak-stats)
+![GitHub Streak](https://streak-stats.demolab.com?user=rahulsingh1397&theme=dark&hide_border=true&ring=00F5D4&fire=00F5D4&currStreakLabel=00F5D4&background=0a0a0a)
 
 <br/><br/>
 
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=050816&color=22d3ee&line=06b6d4&point=67e8f9&area_color=164e63&area=true&hide_border=true&radius=10)](https://github.com/rahulsingh1397)
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=050816&color=22d3ee&line=06b6d4&point=67e8f9&area_color=164e63&area=true&hide_border=true&radius=10)
 
 <br/><br/>
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahulsingh1397&theme=dark&hide_border=true&bg_color=050816&title_color=00F5D4&text_color=ffffff)](https://github.com/rahulsingh1397)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&theme=dark&hide_border=true&bg_color=050816&title_color=00F5D4&text_color=ffffff&icon_color=00F5D4)
 
 </div>
 
