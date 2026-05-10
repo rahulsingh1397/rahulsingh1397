@@ -275,6 +275,10 @@ Event-driven ML governance system for monitoring production AI behavior and gene
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=rahulsingh1397&theme=dark&hide_border=true&ring=00F5D4&fire=00F5D4&currStreakLabel=00F5D4&background=0a0a0a)](https://git.io/streak-stats)
 
+<br/><br/>
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=050816&color=22d3ee&line=06b6d4&point=67e8f9&area_color=164e63&area=true&hide_border=true&radius=10)](https://github.com/rahulsingh1397)
+
 </div>
 
 ---
