@@ -2,7 +2,7 @@
 
 <div align="center">
 
-### AI/ML Engineer · Graph Neural Networks · LAG Systems · Production ML
+### AI/ML Engineer · Graph Neural Networks · RAG Systems · Production ML
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=900&lines=Production+ML+%7C+End-to-End+Ownership;Graph+Neural+Networks+%7C+Heterogeneous+Graphs;LLM+Pipelines+%7C+RAG+%7C+Agentic+Systems;Evaluation+Frameworks+%7C+Research+Rigour;Security+%7C+Compliance+%7C+Enterprise+AI" />
 
