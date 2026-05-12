@@ -84,9 +84,9 @@ Canonical checkpoint: `network_v9_v3`
 | Dataset | Domain | Zero-Shot ARI | Best ARI | Best Mode |
 |---|---|---|---|---|
 | DARPA OpTC | Host telemetry | **0.979** *(binary setup)* | 0.979 | Zero-shot |
-| NSL-KDD | Network IDS | **0.743** | 0.743 | Zero-shot |
+| NSL-KDD | Network IDS | **0.739** | 0.739 | Zero-shot |
 | TON_IoT | IoT Network | 0.431 | **0.845** | Supervised |
-| UNSW-NB15 | Enterprise network | **0.538** | 0.538 | Zero-shot / SupCon tie |
+| UNSW-NB15 | Enterprise network | **0.401** | **0.538** | SupCon |
 | CICIDS2017 | Enterprise IDS | **0.284** | 0.284 | Zero-shot |
 | SQTK_SIEM | SIEM / SOC alerts | **0.184** | 0.184 | Zero-shot |
 
@@ -136,9 +136,9 @@ Campaign Clusters + ATT&CK Mapping
 
 ### Core Technical Contributions
 
-- Heterogeneous graph modeling with 8 node types and 26 edge relations
-- 15-dimensional contextual graph features projected into 128-dimensional embedding space
-- Geometry-Aware Ensemble Clustering (GAEC)
+- Heterogeneous graph modeling with 8 node types and 29 edge relations
+- 6-dimensional alert features (tactic, alert_type, hour, day, protocol, service) projected into 128-dimensional embedding space
+- Geometry-Aware Embedding Confidence (GAEC)
 - Soft-ZCA whitening to mitigate representation collapse
 - Confidence-aware clustering refinement
 - Full-batch embedding inference for stable clustering
@@ -148,7 +148,7 @@ Campaign Clusters + ATT&CK Mapping
 | Finding | Result |
 |---|---|
 | Full-batch inference | Restored clustering separability after inference correction |
-| 15-dim contextual features | Reduced cosine similarity from >0.99 to ~0.26 |
+| 6-dim alert features | Stable cosine similarity ~0.73 (no collapse) |
 | ZCA whitening | Recovered clustering structure on sparse SIEM datasets |
 | Union-Find refinement | Disabled after net-negative evaluation across datasets |
 
