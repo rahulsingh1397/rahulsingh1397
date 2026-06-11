@@ -173,17 +173,20 @@ Raw Alerts → Graph Converter → Heterogeneous GNN (HeteroGATConv)
 
 ---
 
-## 📊 GitHub stats
+## ⚡ Activity
 
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&hide_border=true&title_color=00F5D4&icon_color=00F5D4&text_color=c9d1d9&bg_color=00000000" />
-  <img height="165" alt="GitHub contribution statistics" src="https://github-readme-stats.vercel.app/api?username=rahulsingh1397&show_icons=true&hide_border=true&title_color=0d9488&icon_color=0d9488&bg_color=00000000" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rahulsingh1397/rahulsingh1397/output/github-snake-dark.svg" />
+  <img alt="Snake animation eating my GitHub contribution graph" src="https://raw.githubusercontent.com/rahulsingh1397/rahulsingh1397/output/github-snake.svg" />
 </picture>
+
+<br/><br/>
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&hide_border=true&title_color=00F5D4&text_color=c9d1d9&bg_color=00000000" />
-  <img height="165" alt="Most used programming languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulsingh1397&layout=compact&hide_border=true&title_color=0d9488&bg_color=00000000" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=050816&color=22d3ee&line=06b6d4&point=67e8f9&area_color=164e63&area=true&hide_border=true&radius=10" />
+  <img alt="GitHub contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=ffffff&color=0d9488&line=0d9488&point=0f766e&area_color=ccfbf1&area=true&hide_border=true&radius=10" />
 </picture>
 
 </div>
@@ -197,5 +200,7 @@ Raw Alerts → Graph Converter → Heterogeneous GNN (HeteroGATConv)
 **Stevens Institute of Technology · MS Information Systems**
 
 Open to: **AI/ML Engineer · AI Safety Researcher · Applied ML Researcher · LLM Systems Engineer**
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=110&section=footer&color=0:0d9488,50:00F5D4,100:0d9488&animation=fadeIn" width="100%" alt="" />
 
 </div>
