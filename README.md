@@ -63,6 +63,7 @@ I specialize in:
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![RFC 8693 / OAuth](https://img.shields.io/badge/RFC_8693_/_OAuth-2C2255?style=flat-square&logo=auth0&logoColor=white)
+![RFC 9449 / DPoP](https://img.shields.io/badge/RFC_9449_/_DPoP-1B5E20?style=flat-square&logo=auth0&logoColor=white)
 ![PyJWT](https://img.shields.io/badge/PyJWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 ![Threat Modeling](https://img.shields.io/badge/Threat_Modeling-8A1538?style=flat-square&logo=hackthebox&logoColor=white)
@@ -105,43 +106,47 @@ I specialize in:
 
 <img align="right" src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" width="180" />
 
-🔗 **Repository:** https://github.com/rahulsingh1397/aegis-at
+🔗 **Repository:** https://github.com/rahulsingh1397/aegis-at · Tags: `v1.0.0`, `v2.0.0`
 
 A red-team benchmark measuring whether **audit attribution survives delegation**
-in multi-agent AI systems. Headline finding: adding the industry-standard
-delegation mechanism (RFC 8693) to a correctly-functioning system makes
-attribution *worse* — the audit log names the agent that **requested** an action,
-not the one that **executed** it.
+in multi-agent AI systems. **v1 headline:** adding the industry-standard
+delegation mechanism (RFC 8693) makes attribution *worse* — the log names the
+**requester**, not the **executor**. **v2 headline:** sender-constrained tokens
+(DPoP, RFC 9449) recover attribution to 1.0 — the standardized fix v1 named is
+now measured and works.
 
 **Why this research matters.** NIST's NCCoE (Feb 2026) named auditing and
 non-repudiation of AI agents as an open problem; the CSA's confused-deputy
 research note (Mar 2026) warns that when an action runs under a trusted agent's
 identity, audit logs "look legitimate and delay detection." AEGIS-AT measures
-exactly that gap — and names the standardized fix (sender-constrained tokens).
+exactly that gap — and demonstrates the standardized layer that closes it.
 
-**The finding — a non-monotonic attribution curve:**
+**The finding — a non-monotonic attribution curve (v2, on both topologies):**
 
 | Baseline | Defense in place | AIS |
 |---|---|---|
 | B1 | Shared service account | 0.0 |
 | B2 | Per-agent identity | 1.0 |
 | B3 | + RFC 8693 delegation | 0.0 |
-| B4 | + tamper-evident log | 0.0 |
+| B4 | + tamper-evident log (real hash chain, LIS = 1.0) | 0.0 |
+| **B5** | **+ DPoP sender-constraint** | **1.0** |
 
-Attribution is perfect under per-agent identity (B2), then **regresses to zero**
-when signed delegation is added (B3); tamper-evident logging (B4) cannot recover
-it. The failure is structural: RFC 8693's current-actor claim, combined with
-unbound bearer tokens, records the requester and provides no field for the executor.
+Attribution is perfect under per-agent identity (B2), **regresses to zero** when
+signed delegation is added (B3), **stays at zero** under tamper-evident logging
+(B4) — and **recovers to 1.0** under DPoP-bound tokens (B5). A new **Log
+Integrity Score** shows B4 is tamper-proof (LIS = 1.0) yet still mis-attributing
+(AIS = 0.0) — a cryptographically perfect record of the wrong actor.
 
 **Approach & rigor**
 
-- Minimal SOC pipeline: two sibling agents, one scope-gated tool, four config-flag baselines over one codebase
-- Independent ground-truth recorder + strict triple-match metric (actor, scope, principal_chain)
-- Curve **predicted in the threat model before** the attack code was written
-- Deterministic and reproducible — 59 tests, single-command `pytest`
-- Honest scope: n=1 topology, scripted agents (no LLM confounds), categorical result; sender-constrained Baseline 5 named as the next step
+- Minimal SOC pipeline — five config-flag baselines over **one** codebase
+- Two topologies (T1: 2-agent, T2: 3-agent linear chain) — the gap does **not** heal with depth
+- Process-boundary ground-truth recorder (`os.getpid()` — unspoofable by an in-process rename)
+- Stochastic Bernoulli(p) policy with Wilson 95% intervals and adaptive sample sizes
+- Pre-registration **mechanized**: SHA-256-locked threat model + CI gate (any edit fails the build)
+- **133 tests** (74 v2 + 59 frozen v1); fully reproducible
 
-`Python` `RFC 8693 / OAuth` `PyJWT` `pytest` `Threat Modeling`
+`Python` `RFC 8693 / OAuth` `RFC 9449 / DPoP` `PyJWT` `cryptography` `pytest` `Threat Modeling`
 
 <br clear="right"/>
 
@@ -278,7 +283,8 @@ Event-driven ML governance system for monitoring production AI behavior and gene
 
 | Research Area | Status | Details |
 |---|---|---|
-| AEGIS-AT v2 | 🔬 Active | Real tamper-evident log (B4), sender-constrained Baseline 5, stochastic sweep |
+| AEGIS-AT v2 | ✅ Shipped | Real B4 hash-chain + LIS; DPoP Baseline 5 (AIS → 1.0); 3-agent T2 topology; Wilson 95% CIs; threat-model SHA-256-locked. Tag `v2.0.0`. |
+| AEGIS-AT v3 | 📋 Planned | mTLS Baseline 5b (RFC 8705); fan-in + cross-org topologies; LLM-in-the-loop adapter; real-telemetry attack distributions |
 | SupCon fine-tuning | ✅ Verified | Improved UNSW-NB15 clustering stability |
 | ZCA whitening for SIEM | ✅ Verified | Improved sparse embedding separability |
 | Multi-domain training | 📋 Planned | Expansion across additional telemetry domains |
