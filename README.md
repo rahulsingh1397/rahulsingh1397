@@ -134,20 +134,6 @@ Raw Alerts → Graph Converter → Heterogeneous GNN (HeteroGATConv)
 | **Enterprise AI Knowledge Agent** | Production RAG + ReAct agent for regulated workflows — Recall@5 0.68 → 0.91, P99 1.45s, 2–5K queries/day, zero compliance incidents | LangChain · FAISS · FastAPI | *proprietary* |
 
 ---
-
-## 🔭 Research status
-
-| Area | Status | Details |
-|---|:---:|---|
-| AEGIS-AT v2 | ✅ Shipped | DPoP Baseline 5 (AIS → 1.0) · real hash-chain + LIS · 3-agent topology · Wilson CIs · SHA-256-locked threat model · tag `v2.0.0` |
-| AEGIS-AT v3 | 📋 Planned | mTLS Baseline 5b (RFC 8705) · fan-in + cross-org topologies · LLM-in-the-loop adapter · real-telemetry attack distributions |
-| GAEC arXiv preprint | ✍️ Drafting | Full methodology + ablation analysis |
-| SupCon fine-tuning | ✅ Verified | Improved UNSW-NB15 clustering stability |
-| ZCA whitening for SIEM | ✅ Verified | Improved sparse-embedding separability |
-| Multi-domain training | 📋 Planned | Expansion across additional telemetry domains |
-
----
-
 ## 🧰 Stack
 
 <div align="center">
