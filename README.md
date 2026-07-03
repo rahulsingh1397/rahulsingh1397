@@ -26,13 +26,13 @@ I build production ML systems — and the adversarial benchmarks that test wheth
 </div>
 
 > [!NOTE]
-> **Just shipped — [AEGIS-AT `v2.0.0`](https://github.com/rahulsingh1397/AEGIS-AT):** sender-constrained tokens (DPoP, RFC 9449) recover multi-agent audit attribution to 100% — the standardized fix that v1 identified is now measured, pre-registered, and reproducible.
+> **Just shipped — [AEGIS-AT `v3.0.0`](https://github.com/rahulsingh1397/AEGIS-AT):** the completion-record protocols arriving in 2026 (AIP / PEDIGREE / HDP) default to trusting an agent's *self-reported* account of what it did — so I put **four real open-weight LLMs** in the executor seat and showed they forge that self-report ~90–100% of the time under prompt injection, while an independent verifier drives it to **zero**. Pre-registered, reproducible, and archived on Zenodo ([`10.5281/zenodo.20693303`](https://doi.org/10.5281/zenodo.20693303)).
 
 ---
 
 ## What I do
 
-- **AI Safety & Agent Security** — when an AI agent takes a consequential action, can you prove *which* agent did it? I build red-team benchmarks that answer this with measurements, not assumptions.
+- **AI Safety & Agent Security** — when an AI agent takes a consequential action, can you prove *which* agent did it? I build red-team benchmarks that answer this with measurements, not assumptions — including whether a real LLM can be induced to lie about its own actions.
 - **Graph ML for cybersecurity** — heterogeneous graph neural networks that cluster thousands of raw security alerts into coherent attack campaigns, without needing labeled data.
 - **LLM systems in production** — retrieval-augmented pipelines, agents, and the evaluation harnesses that keep them honest, in regulated enterprise environments.
 
@@ -42,11 +42,13 @@ Every project below follows the same discipline: **state the prediction before w
 
 ## 🛡️ Flagship: AEGIS-AT — Attribution Integrity Benchmark
 
-🔗 [`github.com/rahulsingh1397/AEGIS-AT`](https://github.com/rahulsingh1397/AEGIS-AT) · releases [`v1.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v1.0.0) · [`v2.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v2.0.0)
+🔗 [`github.com/rahulsingh1397/AEGIS-AT`](https://github.com/rahulsingh1397/AEGIS-AT) · releases [`v1.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v1.0.0) · [`v2.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v2.0.0) · [`v3.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v3.0.0) · [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20693303.svg)](https://doi.org/10.5281/zenodo.20693303)
 
-**In one sentence:** when AI agents delegate work to each other, the audit log can end up naming the *wrong agent* — this benchmark measures exactly when that happens, and proves which defense fixes it.
+**In one sentence:** when AI agents delegate work to each other, the audit log can end up naming the *wrong agent* — this benchmark measures exactly when that happens, and proves which defense actually fixes it, from OAuth delegation up to the completion-record protocols shipping in 2026.
 
 **Why it matters (no jargon):** imagine a hospital's automated security system where a low-privilege "triage" agent asks a high-privilege "containment" agent to quarantine a machine. Afterward, the log should say who did it. Under the *industry-standard* delegation protocol, the log names the agent that *asked* — not the one that *acted*. An attacker can exploit that to hide who really took a dangerous action. NIST flagged this exact accountability question as an open problem in Feb 2026.
+
+**v3's escalation (2026):** the newest agent-identity proposals let agents file their *own* "completion record" — a signed note saying what they did. Trusting that self-report collapses the moment the agent lies — and v3 puts **four real open-weight LLMs** in the seat to prove they *do* lie (forging the record ~90–100% of the time under prompt injection), while an independent verifier nulls every attempt.
 
 **The measured result — attribution score (1.0 = perfect, 0.0 = always wrong):**
 
@@ -56,24 +58,30 @@ Every project below follows the same discipline: **state the prediction before w
 | B2 — per-agent identity | each agent gets its own credential | **1.0** ✅ |
 | B3 — + RFC 8693 delegation | the standards-recommended protocol | 0.0 ⚠️ |
 | B4 — + tamper-evident log | cryptographic log protection | 0.0 ⚠️ |
-| **B5 — + DPoP sender-constraint** | **token bound to its true holder** | **1.0** ✅ |
+| B5 — + DPoP sender-constraint | token bound to its true holder | **1.0** ✅ |
+| B6 — + mTLS (RFC 8705) | certificate-bound token | **1.0** ✅ |
+| B7 — + A-JWT execution assertion | per-agent proof-of-possession | **1.0** ✅ |
+| B8 — + self-reported completion | trust the agent's own report | **0.0** ⚠️ *(collapses under a lying agent)* |
+| B9 — + tool-verified completion | an independent observer confirms it | **1.0** ✅ |
 
-The counter-intuitive headline: **adding the recommended delegation standard makes attribution *worse*** (B2 → B3), tamper-proofing can't fix it (B4 protects a *wrong* record perfectly), and only binding tokens to their holders (B5) restores accountability.
+The counter-intuitive headline: **adding the recommended delegation standard makes attribution *worse*** (B2 → B3), tamper-proofing can't fix it (B4 protects a *wrong* record perfectly), and accountability is restored only by *verifying the executor at execution* — DPoP, mTLS, A-JWT, or an independent verifier (B5–B7, B9). The 2026 completion-record default (B8) trusts self-report and fails under collusion — where, in v3, the colluder is a **real LLM**.
 
 <details>
 <summary><b>🔬 Technical depth — methodology & rigor</b> (click to expand)</summary>
 <br/>
 
-- **Five baselines as config flags over one codebase** — score differences are attributable to the defense, never to incidental implementation differences
-- **Two topologies** (2-agent and 3-agent delegation chains) — the gap does **not** heal with chain depth; the deeper chain just names a different non-executor
+- **Nine baselines as config flags over one codebase** — score differences are attributable to the defense, never to incidental implementation differences; v3 *imports* v2's code rather than forking it
+- **Real-model LLM tier** — four open-weight models (Llama-3.1-8B → Llama-3.3-70B → GPT-OSS-20B → GPT-OSS-120B) placed in the executor seat and induced by prompt injection on a structured tool-call argument; **B8 forging 90–100%, B9 evasion 0** across every model, summarized as evasion rates with Wilson 95% intervals against a locked hypothesis set (H1–H4)
+- **Honest reporting** — the pre-registered capability curve (H1) came back *flat* and is reported as a finding under a disclosed forced-call confound, **not coded around**; the deterministic B9 result is framed as a structural control, not oversold as an empirical surprise
 - **Process-boundary ground truth** — the recorder reads the executing agent's OS process identity (`os.getpid()` via a kernel-side PID registry); an agent that renames its thread or process title cannot spoof it
+- **Two topologies** (2-agent and 3-agent delegation chains) — the gap does **not** heal with chain depth; the deeper chain just names a different non-executor
 - **Log Integrity Score (LIS)** — a second metric proving B4 is simultaneously tamper-proof (LIS = 1.0) and mis-attributing (AIS = 0.0): a cryptographically perfect record of the wrong actor
-- **Stochastic sweep** — Bernoulli(p) attack frequency across p ∈ {0.1, 0.5, 0.9} with Wilson 95% intervals and adaptive sample-size escalation; the curve shape is invariant to attack frequency, confirming the failure is structural
-- **Mechanized pre-registration** — the threat model is SHA-256-locked with a CI gate; *any* edit to the predictions fails the build. Contradicted predictions get reported, not reconciled
-- **133 tests** (74 v2 + 59 frozen v1), fully deterministic, reproduces in seconds; all paper figures regenerate from the live harness
-- **DPoP (RFC 9449) implemented by hand** — Ed25519 proof-of-possession keys, RFC 7638 thumbprints, replay cache, freshness windows
+- **Two-stage mechanized pre-registration** — deterministic core + LLM-tier parameters, each SHA-256-locked with a CI gate; *any* edit to the predictions fails the build. Every domain claim (RFC 8693/8705/9449, AIP, PEDIGREE, HDP, MCP, A-JWT) is verified at primary source, contradictions reported rather than reconciled
+- **283 tests across three versions** (150 v3 + 74 v2 + 59 frozen v1) — the deterministic core reproduces in seconds with no API key; all paper figures regenerate from the live harness
+- **Standards implemented by hand** — DPoP (RFC 9449: Ed25519 PoP + RFC 7638 thumbprints + replay cache + freshness windows), mTLS certificate binding (RFC 8705), A-JWT execution assertions, over an MCP-shaped transport boundary
+- **Archived + citable** — three peer-style papers (v1 17 pp · v2 14 pp · v3 17 pp) and a Zenodo deposit under concept DOI [`10.5281/zenodo.20693303`](https://doi.org/10.5281/zenodo.20693303)
 
-`Python` `RFC 8693 / OAuth` `RFC 9449 / DPoP` `PyJWT` `cryptography` `pytest` `Threat Modeling`
+`Python` `RFC 8693 / OAuth` `RFC 9449 / DPoP` `RFC 8705 / mTLS` `A-JWT` `MCP` `LLM red-teaming` `Groq` `PyJWT` `cryptography` `pytest` `Threat Modeling`
 
 </details>
 
@@ -149,10 +157,13 @@ Raw Alerts → Graph Converter → Heterogeneous GNN (HeteroGATConv)
 ![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=flat-square&logo=meta&logoColor=white)
 ![RAGAS](https://img.shields.io/badge/RAGAS-6E40C9?style=flat-square&logoColor=white)
 ![LangSmith](https://img.shields.io/badge/LangSmith-1C3C3C?style=flat-square&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq-F55036?style=flat-square&logoColor=white)
 
 **Security & standards** &nbsp;
 ![RFC 8693 / OAuth](https://img.shields.io/badge/RFC_8693_/_OAuth-2C2255?style=flat-square&logo=auth0&logoColor=white)
 ![RFC 9449 / DPoP](https://img.shields.io/badge/RFC_9449_/_DPoP-1B5E20?style=flat-square&logo=auth0&logoColor=white)
+![RFC 8705 / mTLS](https://img.shields.io/badge/RFC_8705_/_mTLS-0B3D2E?style=flat-square&logo=auth0&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logoColor=white)
 ![PyJWT](https://img.shields.io/badge/PyJWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
 ![Threat Modeling](https://img.shields.io/badge/Threat_Modeling-8A1538?style=flat-square&logo=hackthebox&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
