@@ -6,7 +6,7 @@
 
 I build production ML systems — and the adversarial benchmarks that test whether they actually hold up.
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=00F5D4&center=true&vCenter=true&width=820&lines=Multi-Agent+Security+%7C+Attribution+%7C+Non-Repudiation;Graph+Neural+Networks+%7C+Heterogeneous+Graphs;LLM+Pipelines+%7C+RAG+%7C+Evaluation+Harnesses;Pre-registered%2C+Reproducible+Research" alt="Rotating taglines: multi-agent security, graph neural networks, LLM pipelines, reproducible research" />
+**Multi-Agent Security · Attribution · Non-Repudiation&nbsp;|&nbsp;Graph Neural Networks&nbsp;|&nbsp;LLM Pipelines · RAG · Evaluation&nbsp;|&nbsp;Pre-registered, Reproducible Research**
 
 <br/>
 
