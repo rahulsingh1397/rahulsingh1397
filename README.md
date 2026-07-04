@@ -19,14 +19,11 @@ I build production ML systems — and the adversarial benchmarks that test wheth
 <a href="https://linkedin.com/in/rahulsingh1397">
   <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile" />
 </a>
-<a href="https://github.com/sponsors/rahulsingh1397">
-  <img src="https://img.shields.io/badge/❤️_Sponsor-Fund_My_Work-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="GitHub Sponsors" />
-</a>
 
 </div>
 
 > [!NOTE]
-> **Just shipped — [AEGIS-AT `v3.0.0`](https://github.com/rahulsingh1397/AEGIS-AT):** the completion-record protocols arriving in 2026 (AIP / PEDIGREE / HDP) default to trusting an agent's *self-reported* account of what it did — so I put **four real open-weight LLMs** in the executor seat and showed they forge that self-report ~90–100% of the time under prompt injection, while an independent verifier drives it to **zero**. Pre-registered, reproducible, and archived on Zenodo ([`10.5281/zenodo.20693303`](https://doi.org/10.5281/zenodo.20693303)).
+> **Just shipped — [AEGIS-AT `v3.0.0`](https://github.com/rahulsingh1397/aegis-at):** the completion-record protocols arriving in 2026 (AIP / PEDIGREE / HDP) default to trusting an agent's *self-reported* account of what it did — so I put **four real open-weight LLMs** in the executor seat and showed they forge that self-report ~90–100% of the time under prompt injection, while an independent verifier drives it to **zero**. Pre-registered, reproducible, and archived on Zenodo ([`10.5281/zenodo.20693303`](https://doi.org/10.5281/zenodo.20693303)).
 
 ---
 
@@ -42,7 +39,7 @@ Every project below follows the same discipline: **state the prediction before w
 
 ## 🛡️ Flagship: AEGIS-AT — Attribution Integrity Benchmark
 
-🔗 [`github.com/rahulsingh1397/AEGIS-AT`](https://github.com/rahulsingh1397/AEGIS-AT) · releases [`v1.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v1.0.0) · [`v2.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v2.0.0) · [`v3.0.0`](https://github.com/rahulsingh1397/AEGIS-AT/releases/tag/v3.0.0) · [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20693303.svg)](https://doi.org/10.5281/zenodo.20693303)
+🔗 [`github.com/rahulsingh1397/aegis-at`](https://github.com/rahulsingh1397/aegis-at) · releases [`v1.0.0`](https://github.com/rahulsingh1397/aegis-at/releases/tag/v1.0.0) · [`v2.0.0`](https://github.com/rahulsingh1397/aegis-at/releases/tag/v2.0.0) · [`v3.0.0`](https://github.com/rahulsingh1397/aegis-at/releases/tag/v3.0.0) · [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20693303.svg)](https://doi.org/10.5281/zenodo.20693303)
 
 **In one sentence:** when AI agents delegate work to each other, the audit log can end up naming the *wrong agent* — this benchmark measures exactly when that happens, and proves which defense actually fixes it, from OAuth delegation up to the completion-record protocols shipping in 2026.
 
@@ -170,26 +167,6 @@ Raw Alerts → Graph Converter → Heterogeneous GNN (HeteroGATConv)
 
 ---
 
-## ⚡ Activity
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rahulsingh1397/rahulsingh1397/output/github-snake-dark.svg" />
-  <img alt="Snake animation eating my GitHub contribution graph" src="https://raw.githubusercontent.com/rahulsingh1397/rahulsingh1397/output/github-snake.svg" />
-</picture>
-
-<br/><br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=050816&color=22d3ee&line=06b6d4&point=67e8f9&area_color=164e63&area=true&hide_border=true&radius=10" />
-  <img alt="GitHub contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=rahulsingh1397&bg_color=ffffff&color=0d9488&line=0d9488&point=0f766e&area_color=ccfbf1&area=true&hide_border=true&radius=10" />
-</picture>
-
-</div>
-
----
-
 <div align="center">
 
 > *Building reliable, production-oriented AI systems — and the benchmarks that test whether they hold.*
@@ -197,7 +174,5 @@ Raw Alerts → Graph Converter → Heterogeneous GNN (HeteroGATConv)
 **Stevens Institute of Technology · MS Information Systems**
 
 Open to: **AI/ML Engineer · AI Safety Researcher · Applied ML Researcher · LLM Systems Engineer**
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=110&section=footer&color=0:0d9488,50:00F5D4,100:0d9488&animation=fadeIn" width="100%" alt="" />
 
 </div>
